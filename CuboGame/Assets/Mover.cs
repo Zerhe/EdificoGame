@@ -5,17 +5,13 @@ using UnityEngine;
 public class Mover : MonoBehaviour {
     public int vel;
 	void Start () {
-		
-	}
+        transform.Translate(Vector3.right * Time.deltaTime * vel);
+    }
 	
 	void Update () {
-		if (Input.GetKey(KeyCode.D))
-        {
+        if (transform.position.x < -4)
             transform.Translate(Vector3.right * Time.deltaTime * vel);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
+        if (transform.position.x > 4)
             transform.Translate(-Vector3.right * Time.deltaTime * vel);
-        }
     }
 }

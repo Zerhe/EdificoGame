@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Caer : MonoBehaviour {
     Rigidbody rgb;
-	void Start () {
+    Mover mov;
+
+    void Start () {
         rgb = GetComponent<Rigidbody>();
+        mov = GetComponent<Mover>();
 	}
 	
 	void Update () {
-		if (Input.GetKey(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Space))
         {
             rgb.useGravity = true;
+            mov.enabled = false;
         }
 	}
 }
